@@ -10,11 +10,9 @@
 # dotenv rails c
 ```
 
-Copy/pasta vars and methods below, according to environment, to produce report delivered 
-via email using SupportMailer function. 
+- Copy/pasta vars and methods below, according to environment, to produce report delivered via email using SupportMailer function. 
 
-This will produce a receipt similar to this. Be aware this is not being sent via postfix
-so this will not be logged.
+- This will produce a receipt similar to this. Be aware this is not being sent via postfix so this will not be logged.
 
 ```
 => #<Mail::Message:47220299166440, Multipart: true, Headers: <Date: Thu, 24 May 2018 18:41:38 +0000>, <From: no-reply@auto-sister-manikin.com>, <To: mortgage_express_IO_Team@chase.com>, <Message-ID: <5b0707623684_7f2d2af248682f58975c0@perf-roostify-core-ip-10-5-202-58.mail>>, <Subject: Chase Perf User Status Report>, <Mime-Version: 1.0>, <Content-Type: multipart/mixed; boundary="--==_mimepart_5b0707621ca9_7f2d2af248682f5897433"; charset=UTF-8>, <Content-Transfer-Encoding: 7bit>>
@@ -23,6 +21,8 @@ so this will not be logged.
 ----
 
 ### To automate:
+
+This could be automated by capturing in ruby script, including in roostify-core and running as scheduled task via cron. Report success/completion via logger / syslog.
 
 - Just one of the SELECT statements below is different (dev: email as Username instead of
   sso_reference_id as Username). Fix this or use conditional? 
